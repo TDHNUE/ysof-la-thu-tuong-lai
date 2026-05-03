@@ -167,14 +167,7 @@ export default function WallPage() {
 
   return (
     <div 
-      className="relative flex flex-col min-h-[100dvh]"
-      style={{
-        backgroundImage: "url('/2.svg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative flex flex-col min-h-[100dvh] wall-bg"
     >
       {/* Particles layer */}
       <Particles />

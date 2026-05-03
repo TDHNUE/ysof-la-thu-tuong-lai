@@ -88,7 +88,7 @@ export default function RootLayout({
         {/* Desktop Background Image */}
         <div className="fixed inset-0 pointer-events-none z-0 hidden md:block">
           <Image
-            src="/z7780006893195_384da50a3eec00ff2134e8b69700e2c0.jpg"
+            src="/bgweb.svg"
             alt="Desktop Background"
             fill
             quality={100}

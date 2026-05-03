@@ -46,6 +46,21 @@ body {
   }
 }
 
+/* Wall background responsive */
+.wall-bg {
+  background-image: url('/2.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+  .wall-bg {
+    background-image: url('/bgwall.svg');
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
