@@ -22,26 +22,39 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ysof-letter.vercel.app"),
-  title: "Bức Tường Tương Lai — Hãy Để Lại Ký Ức Của Bạn",
+  title: {
+    default: "YSOF — Ký Ức Trong Tương Lai",
+    template: "%s | YSOF Ký Ức Trong Tương Lai",
+  },
   description:
-    "Một bức tường kỹ thuật số nơi bạn có thể để lại những dòng ký ức, lời chúc và hy vọng cho YSOF trong tương lai. Viết một note và dán lên tường ngay!",
-  keywords: ["tương lai", "ký ức", "note", "bức tường", "YSOF", "kỷ niệm"],
-  authors: [{ name: "YSOF" }],
+    "Nơi lưu giữ những kỷ niệm, lời chúc và hy vọng gửi đến YSOF trong tương lai. Hãy tự tay viết một chiếc note xinh xắn và dán lên bức tường kỹ thuật số của chúng mình nhé!",
+  keywords: ["YSOF", "tương lai", "ký ức", "note", "bức tường", "kỷ niệm", "lời chúc", "digital wall", "leave a note"],
+  authors: [{ name: "YSOF", url: "https://ysof-letter.vercel.app" }],
   creator: "YSOF",
   publisher: "YSOF",
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Bức Tường Tương Lai — Lưu Giữ Ký Ức YSOF",
+    title: "YSOF — Ký Ức Trong Tương Lai",
     description:
-      "Hãy để lại một mảnh ký ức cho YSOF trong tương lai 💙",
-    url: "https://ysof-letter.vercel.app", // Placeholder, user can update
-    siteName: "Bức Tường Tương Lai",
+      "Nơi lưu giữ những kỷ niệm, lời chúc và hy vọng gửi đến YSOF trong tương lai. Dán một chiếc note lên tường ngay! 💙",
+    url: "https://ysof-letter.vercel.app",
+    siteName: "YSOF Ký Ức Trong Tương Lai",
     images: [
       {
         url: "/z7780006893195_384da50a3eec00ff2134e8b69700e2c0.jpg",
         width: 1200,
         height: 630,
-        alt: "Bức Tường Tương Lai YSOF",
+        alt: "Giao diện Bức Tường Tương Lai YSOF",
       },
     ],
     type: "website",
@@ -49,14 +62,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bức Tường Tương Lai — Lưu Giữ Ký Ức YSOF",
-    description: "Hãy để lại một mảnh ký ức cho YSOF trong tương lai 💙",
+    title: "YSOF — Ký Ức Trong Tương Lai",
+    description: "Nơi lưu giữ những kỷ niệm và lời chúc gửi đến YSOF trong tương lai. Dán một chiếc note lên tường ngay! 💙",
+    creator: "@ysof",
     images: ["/z7780006893195_384da50a3eec00ff2134e8b69700e2c0.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
+  },
+  alternates: {
+    canonical: "https://ysof-letter.vercel.app",
   },
 };
 
@@ -68,15 +85,27 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`h-full antialiased ${quicksand.variable} ${caveat.variable}`}>
       <body className="min-h-full flex flex-col">
-        {/* Background Image */}
-        <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Desktop Background Image */}
+        <div className="fixed inset-0 pointer-events-none z-0 hidden md:block">
           <Image
             src="/z7780006893195_384da50a3eec00ff2134e8b69700e2c0.jpg"
-            alt="Background"
+            alt="Desktop Background"
             fill
             quality={100}
             priority
             className="object-cover object-[center_top] md:object-left-top w-full h-full"
+          />
+        </div>
+
+        {/* Mobile Background Image */}
+        <div className="fixed inset-0 pointer-events-none z-0 block md:hidden">
+          <Image
+            src="/1.svg"
+            alt="Mobile Background"
+            fill
+            quality={100}
+            priority
+            className="object-cover object-left-top w-full h-full"
           />
         </div>
         

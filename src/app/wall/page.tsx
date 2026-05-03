@@ -167,23 +167,30 @@ export default function WallPage() {
 
   return (
     <div 
-      className="relative flex flex-col min-h-screen"
+      className="relative flex flex-col min-h-[100dvh]"
+      style={{
+        backgroundImage: "url('/2.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
     >
       {/* Particles layer */}
       <Particles />
 
       {/* Top Bar */}
       <div className="absolute top-0 left-0 w-full p-3 sm:p-6 z-50 flex flex-col sm:flex-row justify-between items-start gap-4 pointer-events-none">
-        <div className="flex items-start gap-3 pointer-events-auto">
+        <div className="flex items-start gap-3 pointer-events-auto w-full sm:w-auto">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-xl text-blue-800 text-sm font-semibold shadow-sm border border-white hover:bg-white hover:shadow-md transition-all group"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-md rounded-xl text-blue-800 text-sm font-semibold shadow-sm border border-white hover:bg-white hover:shadow-md transition-all group flex-shrink-0"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span> Trang chính
           </Link>
 
           {/* Search filter */}
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-none">
             <SearchFilter
               onSearchChange={setSearchQuery}
               onThemeFilter={setThemeFilter}

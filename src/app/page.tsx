@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div 
-      className="relative flex flex-col flex-1 items-center justify-end min-h-[calc(100vh-100px)] p-4 sm:p-8 pb-12 sm:pb-20"
+      className="relative flex flex-col flex-1 items-center justify-end min-h-[100dvh] p-4 sm:p-8 pb-32 sm:pb-24"
     >
       {/* Particles layer */}
       <Particles />
@@ -36,7 +36,7 @@ export default function Home() {
 
         
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, -5, 0] }}
           transition={{ 
@@ -46,7 +46,7 @@ export default function Home() {
         >
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full sm:w-auto px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 active:scale-95 group"
+            className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-white font-bold text-base sm:text-lg shadow-xl hover:scale-105 transition-all duration-300 active:scale-95 group"
             style={{
               background: 'linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #4f46e5 100%)',
               boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.4)',
@@ -60,7 +60,7 @@ export default function Home() {
           
           <Link
             href="/wall"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm text-blue-900 font-bold text-lg shadow-lg hover:bg-white border focus:outline-none focus:ring-2 focus:ring-blue-400 hover:scale-105 transition-all duration-300 active:scale-95 group"
+            className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-white/80 backdrop-blur-sm text-blue-900 font-bold text-base sm:text-lg shadow-lg hover:bg-white border focus:outline-none focus:ring-2 focus:ring-blue-400 hover:scale-105 transition-all duration-300 active:scale-95 group"
           >
             <span className="inline-block group-hover:scale-110 transition-transform mr-2">
               <Layout className="w-5 h-5" />

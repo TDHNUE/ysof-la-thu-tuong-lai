@@ -50,7 +50,7 @@ export default function SearchFilter({ onSearchChange, onThemeFilter, activeThem
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute top-full left-0 mt-2 w-[320px] sm:w-[380px] rounded-2xl p-4 space-y-3"
+            className="absolute top-full left-0 sm:right-auto mt-2 w-[calc(100vw-2rem)] max-w-[320px] sm:w-[380px] sm:max-w-none rounded-2xl p-4 space-y-3"
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
